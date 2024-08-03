@@ -1,3 +1,5 @@
+package shapes;
+
 public class Square implements Shape {
     double legLength;
 
@@ -15,6 +17,6 @@ public class Square implements Shape {
     }
 
     public void draw() {
-        System.out.println("Drawing Square");
+        System.out.println("Drawing shapes.Square");
     }
 }
