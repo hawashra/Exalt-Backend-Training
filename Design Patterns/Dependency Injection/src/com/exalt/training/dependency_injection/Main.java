@@ -11,6 +11,5 @@ public class Main {
         UserService userService = new UserService(userRepositoryConcrete);
         User user = userService.getUser(1);
         System.out.println(user);
-
     }
 }
