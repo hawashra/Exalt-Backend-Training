@@ -1,6 +1,7 @@
-package user;
+package com.exalt.training.dependency_injection.services;
 
-import userRepo.UserRepository;
+import com.exalt.training.dependency_injection.entities.User;
+import com.exalt.training.dependency_injection.userrepo.UserRepository;
 
 public class UserService {
     private UserRepository userRepository;

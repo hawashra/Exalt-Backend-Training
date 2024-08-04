@@ -1,4 +1,4 @@
-package shapes;
+package com.exalt.training.factory_pattern.products;
 
 public class Square implements Shape {
     double legLength;

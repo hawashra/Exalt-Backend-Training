@@ -1,4 +1,4 @@
-package shapes;
+package com.exalt.training.factory_pattern.products;
 
 public class Circle implements Shape {
     private double radius;

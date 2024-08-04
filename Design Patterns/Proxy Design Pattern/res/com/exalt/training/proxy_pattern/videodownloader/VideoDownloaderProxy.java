@@ -1,10 +1,14 @@
+package com.exalt.training.proxy_pattern.videodownloader;
+
+import com.exalt.training.proxy_pattern.video.Video;
+
 import java.util.HashMap;
 
 public class VideoDownloaderProxy implements VideoDownloaderLib {
     private final HashMap<String, Video> cachedVideos;
     private final VideoDownloaderClass videoDownloader;
 
-    VideoDownloaderProxy(VideoDownloaderClass videoDownloader) {
+    public VideoDownloaderProxy(VideoDownloaderClass videoDownloader) {
         this.videoDownloader = videoDownloader;
         cachedVideos = new HashMap<>();
     }

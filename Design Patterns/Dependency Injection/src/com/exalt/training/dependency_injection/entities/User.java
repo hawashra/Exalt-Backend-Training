@@ -1,4 +1,4 @@
-package user;
+package com.exalt.training.dependency_injection.entities;
 
 public class User {
     private int id;

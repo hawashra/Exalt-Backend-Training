@@ -1,3 +1,5 @@
+package com.exalt.training.proxy_pattern.video;
+
 public class Video {
     private String title;
 

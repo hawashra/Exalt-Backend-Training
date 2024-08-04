@@ -1,11 +1,12 @@
-package userRepo;
-import user.User;
+package com.exalt.training.dependency_injection.userrepo;
+
+import com.exalt.training.dependency_injection.entities.User;
 
 public class UserRepositoryConcrete implements UserRepository {
 
     @Override
     public User findUserById(int id) {
-        // get user from database..
+        // get services from database..
 
         return new User(id, "Hamza Awashra");
     }

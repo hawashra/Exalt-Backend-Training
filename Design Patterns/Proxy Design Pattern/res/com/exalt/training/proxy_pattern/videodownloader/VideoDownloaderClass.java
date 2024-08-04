@@ -1,3 +1,7 @@
+package com.exalt.training.proxy_pattern.videodownloader;
+
+import com.exalt.training.proxy_pattern.video.Video;
+
 public class VideoDownloaderClass implements VideoDownloaderLib {
     @Override
     public Video getVideo(String videoId) {

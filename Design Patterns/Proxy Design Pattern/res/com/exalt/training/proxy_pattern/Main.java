@@ -1,5 +1,8 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+package com.exalt.training.proxy_pattern;
+
+import com.exalt.training.proxy_pattern.videodownloader.VideoDownloaderClass;
+import com.exalt.training.proxy_pattern.videodownloader.VideoDownloaderProxy;
+
 public class Main {
     public static void main(String[] args) {
 
