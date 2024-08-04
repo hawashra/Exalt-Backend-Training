@@ -5,6 +5,8 @@ import com.exalt.training.designpatterns.GPUs.AmdMsiGPU;
 import com.exalt.training.designpatterns.GPUs.GpuModel;
 import com.exalt.training.designpatterns.GPUs.NvidiaMsiGPU;
 
+/** MSI manufacturer company makes both AMD and Nvidia - MSI GPUs */
+
 public class MsiManufacturer extends Company {
 
     @Override

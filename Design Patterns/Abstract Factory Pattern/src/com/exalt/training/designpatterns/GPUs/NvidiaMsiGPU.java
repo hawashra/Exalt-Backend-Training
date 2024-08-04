@@ -1,6 +1,5 @@
 package com.exalt.training.designpatterns.GPUs;
 
-import com.exalt.training.designpatterns.GPUs.GpuBrand;
 
 public class NvidiaMsiGPU implements GpuBrand {
     @Override

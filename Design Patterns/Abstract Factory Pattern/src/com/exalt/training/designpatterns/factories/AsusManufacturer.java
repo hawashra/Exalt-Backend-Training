@@ -4,6 +4,8 @@ import com.exalt.training.designpatterns.GPUs.AmdAsusGPU;
 import com.exalt.training.designpatterns.GPUs.GpuModel;
 import com.exalt.training.designpatterns.GPUs.NvidiaAsusGPU;
 
+/** Asus manufacturer company makes Asus AMD and Asus Nvidia GPUs */
+
 public class AsusManufacturer extends Company {
 
     @Override
