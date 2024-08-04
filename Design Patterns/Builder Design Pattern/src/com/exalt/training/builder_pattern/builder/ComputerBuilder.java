@@ -1,3 +1,7 @@
+package com.exalt.training.builder_pattern.builder;
+
+import com.exalt.training.builder_pattern.products.Computer;
+
 public class ComputerBuilder implements IComputerBuilder {
     private String CPU;
     private String GPU;

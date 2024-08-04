@@ -1,3 +1,5 @@
+package com.exalt.training.builder_pattern.products;
+
 public class Computer {
     private final String CPU;
     private final String GPU;

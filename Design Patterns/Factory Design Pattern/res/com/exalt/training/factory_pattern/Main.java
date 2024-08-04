@@ -11,7 +11,7 @@ public class Main {
 
         Shape square = shapeFactory.getShape("square");
         Shape circle = shapeFactory.getShape("circle");
-        
+
         square.draw();
         circle.draw();
 

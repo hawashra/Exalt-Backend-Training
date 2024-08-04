@@ -1,3 +1,5 @@
+package com.exalt.training.builder_pattern.builder;
+
 public interface IComputerBuilder {
     IComputerBuilder setCPU (String CPU);
     IComputerBuilder setGPU (String GPU);

@@ -1,3 +1,7 @@
+package com.exalt.training.builder_pattern;
+
+import com.exalt.training.builder_pattern.builder.IComputerBuilder;
+
 public class Director {
 
     public void buildGamingPC(IComputerBuilder builder) {
