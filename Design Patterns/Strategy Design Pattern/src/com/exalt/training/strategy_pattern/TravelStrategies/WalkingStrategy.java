@@ -1,4 +1,4 @@
-package TravelStrategies;
+package com.exalt.training.strategy_pattern.TravelStrategies;
 
 public class WalkingStrategy implements TravelStrategy {
     @Override

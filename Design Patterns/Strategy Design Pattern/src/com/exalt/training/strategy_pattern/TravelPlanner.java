@@ -1,4 +1,6 @@
-import TravelStrategies.TravelStrategy;
+package com.exalt.training.strategy_pattern;
+
+import com.exalt.training.strategy_pattern.TravelStrategies.TravelStrategy;
 
 public class TravelPlanner {
     private TravelStrategy travelStrategy;

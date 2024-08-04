@@ -1,9 +1,11 @@
-import TravelStrategies.*;
+package com.exalt.training.strategy_pattern;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import com.exalt.training.strategy_pattern.TravelStrategies.*;
+
+
 public class Main {
     public static void main(String[] args) {
+
         TravelPlanner travelPlanner = new TravelPlanner();
         travelPlanner.setTravelStrategy(new WalkingStrategy());
         travelPlanner.calculateTravelingRoute();
