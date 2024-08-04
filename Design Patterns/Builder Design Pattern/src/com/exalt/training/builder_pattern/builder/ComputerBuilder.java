@@ -1,6 +1,9 @@
 package com.exalt.training.builder_pattern.builder;
 
 import com.exalt.training.builder_pattern.products.Computer;
+/**
+ * this is the builder class that is used to build PCs
+ */
 
 public class ComputerBuilder implements IComputerBuilder {
     private String CPU;
@@ -63,6 +66,9 @@ public class ComputerBuilder implements IComputerBuilder {
         return this;
     }
 
+    /** the build method is used to instantiate Computer objects with
+    the attributes of the builder, which are the same attributes in the
+    Computer class. */
     public Computer build() {
        return new Computer(CPU, GPU,
                 RAM, SSD, HDD, cooling, motherboard, powerSupply);

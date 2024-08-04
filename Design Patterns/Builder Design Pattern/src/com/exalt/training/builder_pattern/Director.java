@@ -2,7 +2,18 @@ package com.exalt.training.builder_pattern;
 
 import com.exalt.training.builder_pattern.builder.IComputerBuilder;
 
+/**
+ * the director class is used to help utilize the builder class by making ready to use methods
+ * to create popular types of the product (Computer in our example).
+ * */
+
 public class Director {
+
+
+    /* the methods here give values to the attributes of the builder to
+        be able to use builder.build() method to create objects with such values, useufl for
+        code reusability
+     */
 
     public void buildGamingPC(IComputerBuilder builder) {
         builder.setCPU("i7")
