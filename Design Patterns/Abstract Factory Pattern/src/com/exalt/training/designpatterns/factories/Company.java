@@ -1,6 +1,6 @@
-package factories;
+package com.exalt.training.designpatterns.factories;
 
-import GPUs.GpuModel;
+import com.exalt.training.designpatterns.GPUs.GpuModel;
 
 public abstract class Company {
 

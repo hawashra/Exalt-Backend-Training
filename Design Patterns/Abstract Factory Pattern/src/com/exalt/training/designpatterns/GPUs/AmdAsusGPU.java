@@ -1,4 +1,4 @@
-package GPUs;
+package com.exalt.training.designpatterns.GPUs;
 
 public class AmdAsusGPU implements GpuBrand {
 

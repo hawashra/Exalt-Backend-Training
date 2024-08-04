@@ -1,7 +1,7 @@
-import GPUs.GpuModel;
-import factories.AsusManufacturer;
-import factories.Company;
-import factories.MsiManufacturer;
+import com.exalt.training.designpatterns.factories.AsusManufacturer;
+import com.exalt.training.designpatterns.factories.Company;
+import com.exalt.training.designpatterns.factories.MsiManufacturer;
+import com.exalt.training.designpatterns.GPUs.GpuModel;
 
 import java.util.List;
 

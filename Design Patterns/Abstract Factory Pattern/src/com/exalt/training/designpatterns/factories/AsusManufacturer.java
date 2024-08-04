@@ -1,8 +1,8 @@
-package factories;
+package com.exalt.training.designpatterns.factories;
 
-import GPUs.AmdAsusGPU;
-import GPUs.GpuModel;
-import GPUs.NvidiaAsusGPU;
+import com.exalt.training.designpatterns.GPUs.AmdAsusGPU;
+import com.exalt.training.designpatterns.GPUs.GpuModel;
+import com.exalt.training.designpatterns.GPUs.NvidiaAsusGPU;
 
 public class AsusManufacturer extends Company {
 

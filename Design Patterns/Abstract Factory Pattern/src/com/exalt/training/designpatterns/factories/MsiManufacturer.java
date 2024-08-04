@@ -1,8 +1,9 @@
-package factories;
+package com.exalt.training.designpatterns.factories;
 
-import GPUs.AmdMsiGPU;
-import GPUs.GpuModel;
-import GPUs.NvidiaMsiGPU;
+
+import com.exalt.training.designpatterns.GPUs.AmdMsiGPU;
+import com.exalt.training.designpatterns.GPUs.GpuModel;
+import com.exalt.training.designpatterns.GPUs.NvidiaMsiGPU;
 
 public class MsiManufacturer extends Company {
 
