@@ -1,6 +1,9 @@
 package com.exalt.training.factory_pattern.factories;
 
+// FIXME
 import com.exalt.training.factory_pattern.products.*;
+
+// TODO: implement enum for Shape names.
 
 
 /**
@@ -19,6 +22,8 @@ public class ShapeFactory {
         and the implementation is inside each Shape's class.
 
     */
+    //TODO: getArea(), getColor()
+
     public Shape getShape(String shapeType) {
         if (shapeType.equalsIgnoreCase("Square")) {
             return new Square();
