@@ -1,3 +1,5 @@
+package com.exalt.training.streams;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -11,16 +13,16 @@ public class Main {
 
         List<Employee> employees = new ArrayList<Employee>();
 
-        employees.add(new Employee(1, "Employee a", 1600));
-        employees.add(new Employee(2, "Employee b", 1700));
-        employees.add(new Employee(3, "Employee c", 1800));
-        employees.add(new Employee(4, "Employee d", 1900));
-        employees.add(new Employee(5, "Employee e", 2000));
-        employees.add(new Employee(6, "Employee f", 2100));
-        employees.add(new Employee(7, "Employee g", 2200));
-        employees.add(new Employee(8, "Employee h", 2300));
-        employees.add(new Employee(9, "Employee i", 2400));
-        employees.add(new Employee(10, "Employee j", 2500));
+        employees.add(new Employee(1, "com.exalt.training.streams.Employee a", 1600));
+        employees.add(new Employee(2, "com.exalt.training.streams.Employee b", 1700));
+        employees.add(new Employee(3, "com.exalt.training.streams.Employee c", 1800));
+        employees.add(new Employee(4, "com.exalt.training.streams.Employee d", 1900));
+        employees.add(new Employee(5, "com.exalt.training.streams.Employee e", 2000));
+        employees.add(new Employee(6, "com.exalt.training.streams.Employee f", 2100));
+        employees.add(new Employee(7, "com.exalt.training.streams.Employee g", 2200));
+        employees.add(new Employee(8, "com.exalt.training.streams.Employee h", 2300));
+        employees.add(new Employee(9, "com.exalt.training.streams.Employee i", 2400));
+        employees.add(new Employee(10, "com.exalt.training.streams.Employee j", 2500));
 
         EmployeeRepo employeeRepo = new EmployeeRepo(employees);
 
@@ -92,7 +94,7 @@ public class Main {
         * findAny() returns an arbitrary element from the stream
         * findFirst() returns the first element in the stream.
         *
-        * in the example below, findFirst() returns the Optional<Employee> of the first employee with
+        * in the example below, findFirst() returns the Optional<com.exalt.training.streams.Employee> of the first employee with
         * salary > 2000.
         *
         *

@@ -1,3 +1,5 @@
+package com.exalt.training.streams;
+
 public class Employee {
     private int id;
     private String name;
@@ -38,7 +40,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" +
+        return "com.exalt.training.streams.Employee{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", salary=" + salary +
