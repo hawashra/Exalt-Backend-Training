@@ -99,12 +99,37 @@ public class Main {
         *
         * */
 
-        Optional<Employee> exists = employees.stream().filter(e -> e.getSalary() > 2000).findFirst();
+        Optional<Employee> exists = employees
+                .stream()
+                .filter(e -> e.getSalary() > 2000)
+                .findFirst();
         System.out.println(exists.get());
 
 
+        /*
+            reduce() method cont. combines elements of a stream until it reduces to a single output value.
+        */
+        // T reduce(...)
+        employees
+                .stream()
+                .map(e-> e.getSalary())
+                .reduce(Integer::sum)
+                .ifPresent(System.out::println);
 
+        // another example on reduce() with Optional<T> reduce(...)
+        Optional<Integer> opt = employees
+                .stream()
+                .filter(e -> e.getSalary() > 2500 /*does not exist*/)
+                .map(e -> e.getSalary()).
+                reduce(Integer::sum);
 
-
+        // if the filtering operation contained at least one element
+        if (opt.isPresent()) {
+            System.out.println(opt.get());
+        }
+        // if the filtering operation did not have any employee matching the condition.
+        else {
+            System.out.println("no employees found");
+        }
     }
 }
