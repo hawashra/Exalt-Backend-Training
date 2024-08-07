@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+//@RequestMapping("/users")
 public class UserController {
 
  //   @Autowired
@@ -17,10 +18,9 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-
-    @GetMapping("/")
+    @GetMapping("/hello")
     public String hello() {
-        return "Hello World";
+        return "Hello World!";
     }
 
     @GetMapping("/users")
@@ -28,18 +28,23 @@ public class UserController {
         return userService.getUsers();
     }
 
-    /*
-    @PostMapping
-    public String saveUser(@RequestBody User user) {
 
+    @PostMapping("/users")
+    public String addUser(@RequestBody User user) {
 
-        return "Saved.";
+        userService.addUser(user);
+        return "User created successfully";
     }
-    */
 
-    @PutMapping("update/{id}")
-    public User updateUser(@PathVariable int id, @RequestBody User user) {
+    @PutMapping("/users/{id}")
+    public User updateUser(@PathVariable Long id, @RequestBody User user) {
 
        return userService.updateUser(id, user);
+    }
+
+    @DeleteMapping("/users/{id}")
+    public String deleteUser(@PathVariable Long id) {
+        userService.deleteUser(id);
+        return "User deleted successfully";
     }
 }

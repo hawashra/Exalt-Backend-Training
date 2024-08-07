@@ -21,7 +21,7 @@ public class UserService {
         return userRepo.findById(id);
     }
 
-    public User createUser(User user) {
+    public User addUser(User user) {
         return userRepo.save(user);
     }
 
@@ -35,6 +35,10 @@ public class UserService {
         user.setAge(userDetails.getAge());
 
         return userRepo.save(user);
+    }
+
+    public void deleteUser(Long id) {
+        userRepo.deleteById(id);
     }
 
 }

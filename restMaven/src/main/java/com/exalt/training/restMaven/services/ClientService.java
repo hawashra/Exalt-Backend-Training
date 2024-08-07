@@ -38,4 +38,12 @@ public class ClientService {
         return client;
     }
 
+    public void addClient(Client client) {
+        clientRepo.save(client);
+    }
+
+    public void deleteClient(Long id) {
+        clientRepo.deleteById(id);
+    }
+
 }

@@ -2,7 +2,6 @@ package com.exalt.training.restMaven.services;
 
 import com.exalt.training.restMaven.Models.Car;
 import com.exalt.training.restMaven.Repo.CarRepo;
-import com.exalt.training.restMaven.Repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +25,23 @@ public class CarService {
         return carRepo.findById(id);
     }
 
+    public Car addCar(Car car) {
+        return carRepo.save(car);
+    }
 
+    public String deleteCar(Long id) {
+        carRepo.deleteById(id);
+        return "Car deleted successfully";
+    }
 
+    public Car updateCar(Long id, Car carInfo) {
+        Car car = carRepo.findById(id).get();
+        car.setId(carInfo.getId());
+        car.setMake(carInfo.getMake());
+        car.setModel(carInfo.getModel());
+        car.setYear(carInfo.getYear());
+        carRepo.save(car);
+
+        return car;
+    }
 }
