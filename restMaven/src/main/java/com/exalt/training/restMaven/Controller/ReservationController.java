@@ -16,29 +16,34 @@ public class ReservationController {
     @Autowired
     private ReservationService reservationService;
 
+    //reservations
     @PostMapping("/reservations")
     public Reservation createReservation(@RequestBody ReservationRequest request) {
         return reservationService.createReservation(request);
     }
 
+    //reservations
     @GetMapping("/reservations")
     public List<Reservation> getAllReservations() {
         return reservationService.getAllReservations();
     }
 
-    @GetMapping("/reservations/client/{clientId}")
+    //reservations/clients/{id}
+    // TODO: fix the path to /clients/{clientId}/reservations
+    @GetMapping("/reservation/clients//{clientId}")
     public List<Reservation> getReservationsByClientId(@PathVariable Long clientId) {
         return reservationService.getReservationsByClientId(clientId);
     }
+
 
     @DeleteMapping("/reservations/{id}")
     public void deleteReservation(@PathVariable Long id) {
         reservationService.deleteReservation(id);
     }
 
+    // TODO: fix the path to /clients/{clientId}/reservations
     @DeleteMapping("/reservations/client/{clientId}")
     public void deleteClientReservations(@PathVariable Long clientId) {
         reservationService.deleteReservationsByClientId(clientId);
-
     }
 }

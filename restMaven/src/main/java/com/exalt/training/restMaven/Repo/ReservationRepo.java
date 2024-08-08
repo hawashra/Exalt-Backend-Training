@@ -11,5 +11,6 @@ public interface ReservationRepo extends JpaRepository<Reservation, Long> {
     List<Reservation> findByClientId(Long clientId);
     List<Reservation> findByCarId(Long carId);
     void deleteByClientId(Long clientId);
+    void deleteByCarId(Long carId);
 
 }

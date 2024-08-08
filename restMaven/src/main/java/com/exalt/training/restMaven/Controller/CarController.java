@@ -7,40 +7,45 @@ import com.exalt.training.restMaven.services.CarService;
 
 import java.util.List;
 
-
 @RestController
 //@RequestMapping("/cars")
+
+/**
+ * Car controller,
+ * contains methods that call the car service methods
+ */
+
 public class CarController {
 
     @Autowired
-    private CarService carService;
+    private CarService carService; // Injected bean
 
+    //cars
     @GetMapping("/cars")
     public List<Car> getCars() {
         return carService.getCars();
     }
-
-    @GetMapping("/cars/{id}")
+    //cars/{id}
+    @GetMapping("/car/{id}")
     public Car getCarById(@PathVariable Long id) {
         return carService.getCarById(id).orElseThrow();
     }
 
+    //cars
     @PostMapping("/cars")
     public String addCar(@RequestBody Car car) {
         carService.addCar(car);
         return "Car created successfully";
     }
-
+    //cars/{id}
     @DeleteMapping("/cars/{id}")
     public String deleteCar(@PathVariable Long id) {
         carService.deleteCar(id);
         return "Car deleted successfully";
     }
-
+    //cars/{id}
     @PutMapping("/cars/{id}")
     public Car updateCar(@PathVariable Long id, @RequestBody Car car) {
         return carService.updateCar(id, car);
     }
-
-
 }

@@ -23,12 +23,14 @@ public class UserController {
         return "Hello World!";
     }
 
+    //users
     @GetMapping("/users")
     public List<User> getUsers() {
         return userService.getUsers();
     }
 
 
+    //users/{id}
     @PostMapping("/users")
     public String addUser(@RequestBody User user) {
 
@@ -36,12 +38,14 @@ public class UserController {
         return "User created successfully";
     }
 
+    //users/{id}
     @PutMapping("/users/{id}")
     public User updateUser(@PathVariable Long id, @RequestBody User user) {
 
        return userService.updateUser(id, user);
     }
 
+    //users/{id}
     @DeleteMapping("/users/{id}")
     public String deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);

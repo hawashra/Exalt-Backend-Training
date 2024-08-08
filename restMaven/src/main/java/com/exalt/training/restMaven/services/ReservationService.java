@@ -37,6 +37,8 @@ public class ReservationService {
         return reservationRepo.findAll();
     }
 
+    /* make a reservation for a car by a client with a specific start and end date.
+    * the reservation details are contained in the ReservationRequest object */
     public Reservation createReservation(ReservationRequest request) {
         Car car = carRepo.findById(request.getCarId()).orElseThrow(() -> new RuntimeException("Car not found"));
         Client client = clientRepo.findById(request.getClientId()).orElseThrow(() -> new RuntimeException("Client not found"));
@@ -45,19 +47,46 @@ public class ReservationService {
         return reservationRepo.save(reservation);
     }
 
+    // delete a reservation by its id.
     public void deleteReservation(Long reservationId) {
         reservationRepo.deleteById(reservationId);
     }
 
+    // get all reservations of a client using client's id.
     public List<Reservation> getReservationsByClientId(Long clientId) {
         return reservationRepo.findByClientId(clientId);
     }
 
+    // delete all reservations of a client using client's id.
+    public void deleteReservationsByClientId(Long clientId) {
+        reservationRepo.deleteByClientId(clientId);
+    }
+
+    // get all reservations of a car using car's id.
     public List<Reservation> getReservationsByCarId(Long carId) {
         return reservationRepo.findByCarId(carId);
     }
 
-    public void deleteReservationsByClientId(Long clientId) {
-        reservationRepo.deleteByClientId(clientId);
+    // delete all reservations of a car using car's id.
+    public void deleteReservationsByCarId(Long carId) {
+        reservationRepo.deleteByCarId(carId);
+    }
+
+    // modify a reservation period by its id.
+    public Reservation updateReservationPeriod(Long reservationId, ReservationRequest request) {
+
+        if (reservationRepo.findById(reservationId).isEmpty()) {
+            throw new RuntimeException("Reservation not found");
+        }
+
+        Reservation reservation = reservationRepo.findById(reservationId).get();
+
+        reservation.setStartDate(request.getStartDate());
+        reservation.setEndDate(request.getEndDate());
+
+        // update cost of reservation if the period of reservation is changed.
+        reservation.setReservationCost(reservation.getReservationCost());
+
+        return reservation;
     }
 }
