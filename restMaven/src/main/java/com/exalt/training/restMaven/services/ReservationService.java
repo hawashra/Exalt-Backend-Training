@@ -17,20 +17,16 @@ import java.util.List;
 @Service
 public class ReservationService {
 
-    @Autowired
-    private ReservationRepo reservationRepo;
+    private final ReservationRepo reservationRepo;
 
-    @Autowired
-    private CarRepo carRepo;
+    private final CarRepo carRepo;
 
-    @Autowired
-    private UserRepo userRepo;
+    private final ClientRepo clientRepo;
 
-    @Autowired
-    private ClientRepo clientRepo;
-
-    public ReservationService (ReservationRepo reservationRepo, CarRepo carRepo, UserRepo userRepo, ClientRepo clientRepo) {
+    public ReservationService (ReservationRepo reservationRepo, CarRepo carRepo, ClientRepo clientRepo) {
         this.reservationRepo = reservationRepo;
+        this.carRepo = carRepo;
+        this.clientRepo = clientRepo;
     }
 
     public List<Reservation> getAllReservations() {

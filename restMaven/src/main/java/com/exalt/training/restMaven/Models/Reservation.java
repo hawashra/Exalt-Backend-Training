@@ -23,11 +23,8 @@ public class Reservation {
     @JoinColumn(name = "client_id") // foreign key
     private Client client;
 
-    @Column
     private LocalDate startDate;
-    @Column
     private LocalDate endDate;
-    @Column
     private int reservationCost;
 
     public Reservation(Car car, Client client, LocalDate startDate, LocalDate endDate) {

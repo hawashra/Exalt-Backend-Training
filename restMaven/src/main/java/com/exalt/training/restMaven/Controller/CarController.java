@@ -17,8 +17,11 @@ import java.util.List;
 
 public class CarController {
 
-    @Autowired
-    private CarService carService; // Injected bean
+    private final CarService carService;
+
+    public CarController(final CarService carService) {
+        this.carService = carService;
+    }
 
     //cars
     @GetMapping("/cars")

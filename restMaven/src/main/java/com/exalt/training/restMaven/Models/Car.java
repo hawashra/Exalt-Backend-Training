@@ -11,15 +11,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Car {
     // Attributes
-    @Column
     private String make;
-    @Column
     private String model;
-    @Column
     private int year;
-    @Column
     private String color;
-    @Column
     private int reservationCostPerDay;
 
     @Id
@@ -27,11 +22,12 @@ public class Car {
     private Long id;
 
     // Constructor without id
-    public Car(String make, String model, int year, String color) {
+    public Car(String make, String model, int year, String color, int reservationCostPerDay) {
         this.make = make;
         this.model = model;
         this.year = year;
         this.color = color;
+        this.reservationCostPerDay = reservationCostPerDay;
     }
 
 }

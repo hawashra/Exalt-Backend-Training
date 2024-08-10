@@ -11,7 +11,6 @@ import java.util.Optional;
 @Service
 public class CarService {
 
-    @Autowired
     private final CarRepo carRepo;
 
     public CarService(CarRepo carRepo) {
@@ -35,13 +34,18 @@ public class CarService {
     }
 
     public Car updateCar(Long id, Car carInfo) {
-        Car car = carRepo.findById(id).get();
-        car.setId(carInfo.getId());
-        car.setMake(carInfo.getMake());
-        car.setModel(carInfo.getModel());
-        car.setYear(carInfo.getYear());
-        carRepo.save(car);
 
-        return car;
+        if (carRepo.findById(id).isPresent()) {
+            Car car = carRepo.findById(id).get();
+
+            car.setId(carInfo.getId());
+            car.setMake(carInfo.getMake());
+            car.setModel(carInfo.getModel());
+            car.setYear(carInfo.getYear());
+            carRepo.save(car);
+
+            return car;
+        }
+        return null;
     }
 }

@@ -13,8 +13,11 @@ import java.util.List;
 //@RequestMapping("/reservations")
 public class ReservationController {
 
-    @Autowired
-    private ReservationService reservationService;
+    private final ReservationService reservationService;
+
+    public ReservationController(final ReservationService reservationService) {
+        this.reservationService = reservationService;
+    }
 
     //reservations
     @PostMapping("/reservations")

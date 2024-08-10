@@ -12,7 +12,6 @@ import java.util.Optional;
 @Service
 public class ClientService {
 
-    @Autowired
     private final ClientRepo clientRepo;
 
     public ClientService( ClientRepo clientRepo) {
