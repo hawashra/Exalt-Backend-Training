@@ -32,12 +32,11 @@ public class ReservationController {
     }
 
     //reservations/clients/{id}
-    // TODO: fix the path to /clients/{clientId}/reservations
+
     @GetMapping("/reservation/clients//{clientId}")
     public List<Reservation> getReservationsByClientId(@PathVariable Long clientId) {
         return reservationService.getReservationsByClientId(clientId);
     }
-
 
     @DeleteMapping("/reservations/{id}")
     public void deleteReservation(@PathVariable Long id) {
@@ -45,7 +44,7 @@ public class ReservationController {
     }
 
     // TODO: fix the path to /clients/{clientId}/reservations
-    @DeleteMapping("/reservations/client/{clientId}")
+    @DeleteMapping("/reservations/clients/{clientId}")
     public void deleteClientReservations(@PathVariable Long clientId) {
         reservationService.deleteReservationsByClientId(clientId);
     }
