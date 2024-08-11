@@ -2,6 +2,7 @@ package com.exalt.training.restMaven.Controller;
 
 import com.exalt.training.restMaven.Models.Car;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.exalt.training.restMaven.services.CarService;
 
@@ -51,4 +52,15 @@ public class CarController {
     public Car updateCar(@PathVariable Long id, @RequestBody Car car) {
         return carService.updateCar(id, car);
     }
+
+    // partial update for a car
+    @PatchMapping("/cars/{id}")
+    public ResponseEntity<Car> updateCarRentPrice(@PathVariable Long id, @RequestBody Car car) {
+        if (!carService.getCarById(id).isPresent()) {
+            throw new RuntimeException("Car not found with id " + id);
+        }
+        return ResponseEntity.ok(carService.partialUpdate(id, car));
+    }
+
+
 }

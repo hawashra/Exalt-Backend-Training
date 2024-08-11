@@ -3,6 +3,9 @@ package com.exalt.training.restMaven.Controller;
 import com.exalt.training.restMaven.Models.Client;
 import com.exalt.training.restMaven.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -48,5 +51,18 @@ public class ClientController {
     @PutMapping("/clients/{id}")
     public Client updateClient(@PathVariable Long id, @RequestBody Client client) {
         return clientService.updateClient(id, client);
+    }
+
+
+    // partial update for the client to change balance.
+    @PatchMapping("/clients/{id}")
+    public ResponseEntity<Client> updateClientBalance(@PathVariable Long id, @RequestBody Client client) {
+        if (!clientService.getClientById(id).isPresent()) {
+            throw new RuntimeException("Client not found with id " + id);
+        }
+
+        Client updatedClient = clientService.partialUpdate(id, client);
+
+        return new ResponseEntity<>(updatedClient, HttpStatus.OK);
     }
 }

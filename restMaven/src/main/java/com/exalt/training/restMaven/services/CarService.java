@@ -48,4 +48,15 @@ public class CarService {
         }
         return null;
     }
+
+    // update car reservation cost per day.
+    public Car partialUpdate(Long id, Car car) {
+
+            return carRepo.findById(id).map(existingCar -> {
+                Optional.ofNullable(car.getReservationCostPerDay()).ifPresent(existingCar::setReservationCostPerDay);
+
+                return carRepo.save(existingCar);
+
+            }).orElseThrow(()-> new RuntimeException("Car not found with id " + car.getId()));
+    }
 }

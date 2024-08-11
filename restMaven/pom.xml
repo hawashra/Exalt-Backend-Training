@@ -8,9 +8,10 @@
 		<version>3.3.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>com.exalt.training</groupId>
 	<artifactId>restMaven</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>Car Rent </name>
 	<description>Demo project for Spring Boot, RESTful APIs with maven.</description>
 	<url/>

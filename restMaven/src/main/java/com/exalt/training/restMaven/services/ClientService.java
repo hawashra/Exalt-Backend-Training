@@ -2,8 +2,6 @@ package com.exalt.training.restMaven.services;
 
 import com.exalt.training.restMaven.Models.Client;
 import com.exalt.training.restMaven.Repo.ClientRepo;
-import com.exalt.training.restMaven.Repo.UserRepo;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -45,4 +43,13 @@ public class ClientService {
         clientRepo.deleteById(id);
     }
 
+    public Client partialUpdate(Long id, Client client) {
+
+        return clientRepo.findById(id).map(existingClient -> {
+            Optional.ofNullable(client.getBalance()).ifPresent(existingClient::setBalance);
+
+            return clientRepo.save(existingClient);
+
+        }).orElseThrow(()-> new RuntimeException("Client not found with id " + client.getId()));
+    }
 }
