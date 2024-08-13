@@ -1,0 +1,12 @@
+com\exalt\training\soapcalculator\jaxb\AddRequest.class
+com\exalt\training\soapcalculator\WebServiceConfig.class
+org\example\calculator\AddResponse.class
+org\example\calculator\package-info.class
+org\example\calculator\AddRequest.class
+com\exalt\training\soapcalculator\jaxb\package-info.class
+com\exalt\training\soapcalculator\jaxb\ObjectFactory.class
+org\example\calculator\ObjectFactory.class
+com\exalt\training\soapcalculator\CalculatorServiceImpl.class
+com\exalt\training\soapcalculator\CalculatorEndpoint.class
+com\exalt\training\soapcalculator\jaxb\AddResponse.class
+com\exalt\training\soapcalculator\SoapCalculatorApplication.class
