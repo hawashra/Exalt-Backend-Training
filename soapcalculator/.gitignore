@@ -3,7 +3,8 @@ HELP.md
 gradlew
 mvnw
 .mvn
-target/
+mvnw.*
+mvnw
 build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
