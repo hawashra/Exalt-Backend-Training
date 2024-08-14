@@ -1,9 +1,0 @@
-rootProject.name = 'soapcalculator'
-configurations {
-    jaxb
-}
-
-bootJar {
-    archiveBaseName = 'gs-producing-web-service'
-    archiveVersion =  '0.1.0'
-}
