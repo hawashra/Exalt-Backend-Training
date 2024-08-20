@@ -1,2 +1,9 @@
 .idea
 *.iml
+.mvn
+.gradle
+.mvnw
+.gradlew
+mvn
+gradle
+target
