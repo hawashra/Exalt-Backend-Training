@@ -1,2 +1,10 @@
-.idea
-*.iml
+**/.idea
+**/.iml
+**/.gradle
+**/.gradlew
+**/mvn
+**/gradle
+**/target
+**/.mvn
+**/mvnw
+**/mvnw.cmd
